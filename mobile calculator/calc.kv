@@ -1,0 +1,170 @@
+<MobileLayout>
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        MDTextField:
+            id: calc_input
+            text: "0"
+            halign: "right"
+            font_size: 55
+            size_hint: (1, .50)
+            line_color_normal: 1, 1, 1, 1  # White underline when not focused
+            line_color_focus: 1, 0, 0, 1  # Red underline when focused
+            text_color: "black"
+
+        GridLayout:
+            cols: 4
+            rows: 5
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "%"
+                text_color: "white"
+                size_hint: (.40, .2)
+                md_bg_color: "purple"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "<<"
+                text_color: "white"
+                size_hint: (.40, .2)
+                md_bg_color: "purple"
+                on_press:root.remove()
+
+            MDFillRoundFlatButton:
+                id: clear
+                font_size: 32
+                text: "C"
+                text_color: "white"
+                size_hint: (.40, .2)
+                md_bg_color: "purple"
+                on_press:root.clear()
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "/"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.div()
+                md_bg_color: "purple"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "7"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.button_press(7)
+                md_bg_color: "blue"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "8"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.button_press(8)
+                md_bg_color: "blue"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "9"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.button_press(9)
+                md_bg_color: "blue"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "*"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.prod()
+                md_bg_color: "purple"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "4"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.button_press(4)
+                md_bg_color: "blue"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "5"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.button_press(5)
+                md_bg_color: "blue"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "6"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.button_press(6)
+                md_bg_color: "blue"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "-"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.diff()
+                md_bg_color: "purple"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "1"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.button_press(1)
+                md_bg_color: "blue"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "2"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.button_press(2)
+                md_bg_color: "blue"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "3"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.button_press(3)
+                md_bg_color: "blue"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "+"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.add()
+                md_bg_color: "purple"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "0"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.button_press(3)
+                md_bg_color: "blue"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "+/-"
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.posneg()
+                md_bg_color: "purple"
+
+            MDFillRoundFlatButton:
+                font_size: 32
+                text: "="
+                text_color: "white"
+                size_hint: (.40, .2)
+                on_press: root.equal()
+                md_bg_color: "purple"
