@@ -1,0 +1,50 @@
+MDScreen:
+    BoxLayout:
+        orientation: "vertical"
+
+        MDLabel:
+            text: "Kivy Stop Watch"
+            halign: "center"
+            font_style: "H2"
+            theme_text_color: "Secondary"  # Added theme color for better styling
+
+        MDLabel:
+            id: time
+            text: "[b]00:00:00[/b]"  # Placeholder for current time
+            font_style: "H2"
+            markup: True
+            halign: "center"  # Horizontally center the label
+            valign: "middle"  # Vertically center the label
+            size_hint_y: None
+            height: self.texture_size[1]
+        
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: (1, None)
+            padding: 40
+            spacing: 40
+            height: 150
+
+            Button:
+                on_press: app.start_time()
+                text: "Start"
+                background_normal: ''
+                background_color: 0,0,1, .8
+            
+            Button:
+                on_press: app.reset_time()
+                text: "Reset"
+                background_normal: ''
+                background_color: 1,0,0, .8
+        
+        MDLabel:
+            id: stopwatch
+            text: "[b]00:00:00[/b]"  # Placeholder for the stopwatch
+            font_style: "H2"
+            markup: True
+            halign: "center"  # Horizontally center the label
+            valign: "center"  # Vertically center the label
+            size_hint_y: None
+            height: self.texture_size[1]
+
+
