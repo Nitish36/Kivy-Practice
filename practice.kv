@@ -1,0 +1,87 @@
+ScreenManager:
+    Screen1:
+    Screen2:
+
+<Screen1>:
+    name: "Screen"
+    MDLabel:
+        text: "Kivy Application"
+        font_style:"H1"
+        halign: "center"
+        theme_text_color:"Custom"
+        text_color: 0,0,1
+    
+    MDTextField:
+        id: username_text
+        hint_text: "Username"
+        color_mode: "custom"
+        line_color_normal: app.theme_cls.primary_color
+        line_color_focus: 0, 1, 0, 1
+        helper_text: "Required"
+        mode: "rectangle"
+        icon_right: "account"
+        pos_hint: {"center_x": 0.5, "center_y": 0.8}  # Centered horizontally
+        required: True
+        size_hint: (0.6, 0.1)  # Reduced width
+    
+
+
+    
+    MDRaisedButton:
+        text: "click Me"
+        pos_hint:{"center_x":0.5,"center_y":0.3}
+        padding: 20
+        theme_text_color:"Custom"
+        text_color: 0,0,1
+        md_bg_color: app.theme_cls.primary_color
+        on_release: 
+            root.manager.current = "Second Screen"
+            root.manager.transition.direction='left'
+    
+    MDIconButton:
+        icon: "plus"
+        pos_hint:{"center_x":0.8,"center_y":0.3}
+        padding: 20
+        theme_text_color:"Custom"
+        text_color: 0,0,1
+        md_bg_color: app.theme_cls.primary_color
+        on_release: app.theme_change()
+
+    MDIcon:
+        icon: "android"
+        valign: "middle"
+        font_size: 100
+        theme_text_color:"Custom"
+        text_color: 0,0,1
+
+
+<Screen2>:
+    name:"Second Screen"
+    MDLabel:
+        text: "Second Screen"
+        font_style:"H2"
+        halign:"center"
+        theme_text_color:"Custom"
+        text_color: 0,1,1
+    
+    ScrollView:
+        MDList:
+            id:ls
+            OneLineIconListItem:
+                text: "Item1"
+                IconLeftWidget
+                    icon:"android"
+            
+    
+    MDRaisedButton:
+        text: "click Me"
+        pos_hint:{"center_x":0.5,"center_y":0.3}
+        padding: 20
+        theme_text_color:"Custom"
+        text_color: 0,0,1
+        md_bg_color: app.theme_cls.primary_color
+        on_release: 
+            root.manager.current = "Screen"
+            root.manager.transition.direction='right'
+    
+    

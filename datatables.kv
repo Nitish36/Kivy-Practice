@@ -1,0 +1,48 @@
+ScreenManager:
+    Screen1:
+    Screen2:
+
+<Screen1>:
+    name: "Screen"
+    MDLabel:
+        text: "Kivy Application"
+        font_style:"H1"
+        halign: "center"
+        theme_text_color:"Custom"
+        text_color: 0,0,1
+    
+    
+    MDRaisedButton:
+        text: "click Me"
+        pos_hint:{"center_x":0.5,"center_y":0.3}
+        padding: 20
+        theme_text_color:"Custom"
+        text_color: 0,0,1
+        md_bg_color: app.theme_cls.primary_color
+        on_release: 
+            root.manager.current = "Second Screen"
+            root.manager.transition.direction='left'
+
+
+<Screen2>:
+    name:"Second Screen"
+    MDLabel:
+        text: "Second Screen"
+        font_style:"H2"
+        halign:"center"
+        theme_text_color:"Custom"
+        text_color: 0,1,1
+            
+    
+    MDRaisedButton:
+        text: "click Me"
+        pos_hint:{"center_x":0.5,"center_y":0.3}
+        padding: 20
+        theme_text_color:"Custom"
+        text_color: 0,0,1
+        md_bg_color: app.theme_cls.primary_color
+        on_release: 
+            root.manager.current = "Screen"
+            root.manager.transition.direction='right'
+    
+    
