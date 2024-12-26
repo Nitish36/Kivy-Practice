@@ -1,0 +1,32 @@
+MDFloatLayout:
+    MDLabel:
+        text: "Login"
+        pos_hint: {"center_y":.85}
+        font_style: "H4"
+        halign:"center"
+        theme_text_color:"Custom"
+        text_color: 0,0,0,1
+    
+
+    MDTextField:
+        id: email
+        hint_text: "Email"
+        pos_hint: {"center_x":.5,"center_y":.6}
+        current_hint_text_color: 0,0,0,1
+        size_hint_x: .8
+    
+    MDTextField:
+        id: password
+        hint_text: "Password"
+        pos_hint: {"center_x":.5,"center_y":.5}
+        current_hint_text_color: 0,0,0,1
+        size_hint_x: .8
+        password: True
+    
+    MDRaisedButton:
+        text:"Log In"
+        pos_hint: {"center_x":.5,"center_y":.3}
+        size_hint_x: .5
+        on_release: app.verify(root.ids.email.text,root.ids.password.text)
+        theme_text_color:"Custom"
+        text_color: 0,0,0,1
