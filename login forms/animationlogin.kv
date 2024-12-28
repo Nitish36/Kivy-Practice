@@ -1,0 +1,87 @@
+MDScreen:
+    name: "LoginPage"
+    on_enter:
+        app.anim(back)
+        app.anim1(back1)
+        app.icons(icon)
+        app.text(label)
+
+    MDFloatLayout:
+        MDFloatLayout:
+            id: back
+            size_hint_y:.6
+            pos_hint: {"center_y":1.8}
+            radius:[0,0,0,40]
+            canvas:
+                Color:
+                    rgb:(1,0,0,1)
+                
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+        
+        MDFloatLayout:
+            id: back1
+            size_hint_y:.6
+            pos_hint: {"center_y":1.8}
+            radius:[0,0,0,40]
+            canvas:
+                Color:
+                    rgb:(1,0,0,1)
+                
+                Ellipse:
+                    size:self.size
+                    pos:self.pos
+        
+        MDIconButton:
+            id:icon
+            icon:"account-circle"
+            pos_hint:{"center_x":.5,"center_y":.8}
+            icon_size:"60sp"
+            theme_text_color:"Custom"
+            text_color: 1,1,1,1
+        
+        MDLabel:
+            id: label
+            text:f"[font=Arial]Login Page[/font]"
+            markup: True
+            pos_hint: {"center_y":.75}
+            halign: "center"
+            theme_text_color:"Custom"
+            text_color:1,1,1,1
+            font_style:"H5"
+            opacity:0
+        
+        MDTextField:
+            hint_text: "Email"
+            size_hint_x:.8
+            pos_hint:{"center_x":.5,"center_y":.46}
+            current_hint_text_color:0,0,0,1
+            color_mode:"custom"
+            line_color_focus:1,0,0,1
+        
+        MDTextField:
+            hint_text: "Password"
+            size_hint_x:.8
+            pos_hint:{"center_x":.5,"center_y":.38}
+            current_hint_text_color:0,0,0,1
+            color_mode:"custom"
+            line_color_focus:1,0,0,1
+            password:True
+        
+        MDRaisedButton:
+            text:"Submit"
+            pos_hint:{"center_x":.5,"center_y":.2}
+            size_hint_x:0.5
+            md_bg_color:1,0,0,1
+        
+        MDLabel:
+            text:"Did You"
+            pos_hint:{"center_x":.672,"center_y":.1}
+            font_style:"Body2"
+        
+        MDTextButton:
+            text: "Forgot Password?"
+            pos_hint:{"center_x":.58,"center_y":.1}
+            custom_color:1,0,0,1
+            
