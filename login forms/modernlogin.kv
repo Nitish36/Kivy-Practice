@@ -1,0 +1,85 @@
+MDFloatLayout:
+    md_bg_color: 1, 1, 1, 1
+
+    Image:
+        source: "logo.jpg"
+        size_hint: None, None
+        size: dp(150), dp(150)
+        pos_hint: {"center_x": .5, "y": .7}
+    
+    MDLabel:
+        text: "Log In"
+        pos_hint: {"center_x": .5, "center_y": .65}
+        halign: "center"
+        font_size: "40sp"
+        theme_text_color: "Custom"
+        text_color: 60/255, 43/255, 117/255, 1
+    
+    MDFloatLayout:
+        size_hint: .85, None
+        height: dp(60)
+        pos_hint: {"center_x": .5, "center_y": .5}
+        canvas:
+            Color:
+                rgb: (238/255, 238/255, 238/255, 1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [25]
+        
+        TextInput:
+            hint_text: "Email"
+            size_hint: 1, 1
+            pos_hint: {"center_x": .5, "center_y": .5}
+            multiline: False
+            cursor_color: 96/255, 74/255, 215/255, 1
+            cursor_width: "2sp"
+            foreground_color: 96/255, 74/255, 215/255, 1
+            background_color: 0, 0, 0, 0
+            padding: [15, 10]
+            font_size: "18sp"
+    
+    MDFloatLayout:
+        size_hint: .85, None
+        height: dp(60)
+        pos_hint: {"center_x": .5, "center_y": .4}
+        canvas:
+            Color:
+                rgb: (238/255, 238/255, 238/255, 1)
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [25]
+        
+        TextInput:
+            hint_text: "Password"
+            password: True
+            size_hint: 1, 1
+            pos_hint: {"center_x": .5, "center_y": .5}
+            multiline: False
+            cursor_color: 96/255, 74/255, 215/255, 1
+            cursor_width: "2sp"
+            foreground_color: 96/255, 74/255, 215/255, 1
+            background_color: 0, 0, 0, 0
+            padding: [15, 10]
+            font_size: "18sp"
+    
+    MDTextButton:
+        text: "Forgot Your Password"
+        theme_text_color: "Custom"
+        text_color: 246/255, 135/255, 177/255, 1
+        pos_hint: {"center_x": .5, "center_y": .3}
+    
+    Button:
+        text: "LOGIN"
+        font_size: "20sp"
+        size_hint: .5, .08
+        pos_hint: {"center_x": .5, "center_y": .2}
+        background_color: 0, 0, 0, 0
+        canvas.before:
+            Color:
+                rgb: 246/255, 135/255, 177/255, 1
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [23]
